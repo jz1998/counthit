@@ -97,10 +97,6 @@ class EmojiReaction extends s {
           transform: scale(1);
       }
     }
-    @font-face {
-    font-family: 'Digital-7';
-    src: url('https://cdn.jsdelivr.net/gh/jz1998/counthit/digital-7.ttf');
-  }
   `;
 
   // Render the UI as a function of component state
@@ -171,7 +167,7 @@ class EmojiReaction extends s {
       <div style="display: flex; gap: 0.375rem; flex-wrap: wrap; justify-content: center;">
         ${this.availableReactions.map(item => x`
           <div @click=${this._react} data-name="${item.reaction_name}" class="${item.meReacted ? 'reaction-got-reacted' : 'reaction-got-not-reacted'}" style="display: flex; user-select: none; cursor: pointer; justify-content: center; align-items: center; padding: 1.25rem; font-size: 1.75rem;">
-            <span style="pointer-events: none;">${item.emoji}</span><span style=""font-family: 'Digital-7'; padding:0 0.375rem; pointer-events: none;">${String(item.count || 0).padStart(5, '0')}</span>
+            <span style="pointer-events: none;">${item.emoji}</span><span style="padding:0 0.375rem; pointer-events: none;">${String(item.count || 0).padStart(5, '0')}</span>
           </div>
         `)}
       </div>
