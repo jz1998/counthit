@@ -163,10 +163,6 @@ class EmojiReaction extends s {
     </style>
     <!-- container -->
     <div style="flex-wrap: nowrap; max-width: 100%; display: flex; justify-content: center;  gap: 0.375rem; height: 1.5rem;" class="${this?.theme === 'dark' || (this?.theme === 'system' && system_theme === 'dark') ? 'container-dark' : 'container'}">
-          <!-- reactions available -->
-          ${this.availableReactions.map(item => x`
-            <span @click=${this._react} data-name="${item.reaction_name}" class="reaction-available-emoji ${item.meReacted ? 'reaction-available-emoji-reacted' : ''}" style="cursor: pointer; margin: 0.25rem 0.125rem; padding: 0.25rem; border-radius: 0.375rem;">${item.emoji}</span>
-          `)}
       <!-- reactions got -->
       <div style="display: flex; gap: 0.375rem;">
         ${this.availableReactions.map(item => x`
